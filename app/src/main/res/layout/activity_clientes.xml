@@ -10,7 +10,7 @@
     <include layout="@layout/toolbar" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="@dimen/textview_left_margin"
         android:layout_width="match_parent"
@@ -19,7 +19,9 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_medium"
+        android:maxLines="1" />
 
     <TextView
         android:id="@+id/textView3"
@@ -30,7 +32,8 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_medium"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -41,6 +44,8 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_medium"
+        android:maxLines="1" />
 
 </LinearLayout>
