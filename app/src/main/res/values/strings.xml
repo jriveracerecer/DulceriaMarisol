@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DulceriaMarisol</string>
+    <string name="cliente">Dulcería Marisol</string>
+    <string name="menu">Menú</string>
+    <string name="item_ventas">Ventas</string>
+    <string name="item_clientes">Clientes</string>
+</resources>
