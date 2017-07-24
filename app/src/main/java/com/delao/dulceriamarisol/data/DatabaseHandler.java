@@ -3,14 +3,15 @@ package com.delao.dulceriamarisol.data;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.AsyncTask;
-import android.widget.EditText;
-import android.widget.Toast;
-
 import com.delao.dulceriamarisol.R;
 import com.delao.dulceriamarisol.models.Cliente;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jrivera on 18/07/2017.
@@ -58,14 +59,33 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         new InsertData().execute(cliente);
     }
 
+    public List<Cliente> getAllClientes() {
+        List<Cliente> clienteList = new ArrayList<Cliente>();
+        String query = "SELECT Nombre, Direccion FROM " + TABLE_CLIENTES;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Cliente c = new Cliente();
+                c.setNombre(cursor.getString(0));
+                c.setDireccion(cursor.getString(1));
+                clienteList.add(c);
+            } while (cursor.moveToNext());
+        }
+
+        return clienteList;
+    }
+
     private class InsertData extends AsyncTask<Cliente, Void, Void>{
 
         @Override
             protected void onPreExecute() {
                 //super.onPreExecute();
-                activity.findViewById(R.id.nombreEditText).setEnabled(false);
-                activity.findViewById(R.id.direccionEditText).setEnabled(false);
-                activity.findViewById(R.id.telefonoEditText).setEnabled(false);
+//                activity.findViewById(R.id.nombreEditText).setEnabled(false);
+//                activity.findViewById(R.id.direccionEditText).setEnabled(false);
+//                activity.findViewById(R.id.telefonoEditText).setEnabled(false);
             }
 
             @Override
@@ -88,9 +108,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             protected void onPostExecute(Void aVoid) {
                 //Toast.makeText(context, "Insertado", Toast.LENGTH_SHORT).show();
                 //super.onPostExecute(aVoid);
-                activity.findViewById(R.id.nombreEditText).setEnabled(true);
-                activity.findViewById(R.id.direccionEditText).setEnabled(true);
-                activity.findViewById(R.id.telefonoEditText).setEnabled(true);
+//                activity.findViewById(R.id.nombreEditText).setEnabled(true);
+//                activity.findViewById(R.id.direccionEditText).setEnabled(true);
+//                activity.findViewById(R.id.telefonoEditText).setEnabled(true);
         }
     }
 }

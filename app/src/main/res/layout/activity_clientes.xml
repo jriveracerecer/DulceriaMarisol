@@ -1,54 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.delao.dulceriamarisol.ClientesActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".ClientesActivity">
 
-    <include layout="@layout/toolbar" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="@dimen/textview_left_margin"
-        android:layout_width="match_parent"
+    <android.support.design.widget.AppBarLayout
         android:layout_height="wrap_content"
-        android:text="Nombre" />
-
-    <EditText
-        android:id="@+id/nombreEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/font_size_medium"
-        android:maxLines="1" />
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_marginLeft="@dimen/textview_left_margin"
+        <include layout="@layout/toolbar" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Dirección" />
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.delao.dulceriamarisol.ClientesActivity">
 
-    <EditText
-        android:id="@+id/direccionEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/font_size_medium"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_marginLeft="@dimen/textview_left_margin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Teléfono" />
+        <!--<TextView-->
+        <!--android:id="@+id/textView"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_marginLeft="@dimen/textview_left_margin"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Nombre" />-->
 
-    <EditText
-        android:id="@+id/telefonoEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/font_size_medium"
-        android:maxLines="1" />
+        <!--<EditText-->
+        <!--android:id="@+id/nombreEditText"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="@dimen/font_size_medium"-->
+        <!--android:maxLines="1" />-->
 
-</LinearLayout>
+        <!--<TextView-->
+        <!--android:id="@+id/textView3"-->
+        <!--android:layout_marginLeft="@dimen/textview_left_margin"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Dirección" />-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/direccionEditText"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="@dimen/font_size_medium"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/textView4"-->
+        <!--android:layout_marginLeft="@dimen/textview_left_margin"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Teléfono" />-->
+
+        <!--<EditText-->
+        <!--android:id="@+id/telefonoEditText"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="@dimen/font_size_medium"-->
+        <!--android:maxLines="1" />-->
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:src="@drawable/ic_action_add" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+

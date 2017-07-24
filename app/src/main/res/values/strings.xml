@@ -4,4 +4,7 @@
     <string name="menu">Menú</string>
     <string name="item_ventas">Ventas</string>
     <string name="item_clientes">Clientes</string>
+    <string name="texto_positive">Aceptar</string>
+    <string name="validacion_nombre">El nombre es obligatorio.</string>
+    <string name="validacion_direccion">La dirección es obligatoria.</string>
 </resources>
