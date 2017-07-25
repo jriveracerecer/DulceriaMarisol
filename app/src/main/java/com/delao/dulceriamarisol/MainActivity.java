@@ -2,6 +2,8 @@ package com.delao.dulceriamarisol;
 
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -9,6 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
+import com.delao.dulceriamarisol.fragments.ClientesFragment;
+import com.delao.dulceriamarisol.fragments.VentasFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragmet_container, new VentasFragment());
+        ft.commit();
+
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -36,8 +46,22 @@ public class MainActivity extends AppCompatActivity {
                 menuItem.setChecked(true);
                 mDrawerLayout.closeDrawers();
                 if (menuItem.getItemId() == R.id.navigation_item_clientes){
-                    Intent intent = new Intent(MainActivity.this, ClientesActivity.class);
-                    startActivity(intent);
+                    //Intent intent = new Intent(MainActivity.this, ClientesActivity.class);
+                    //startActivity(intent);
+
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.fragmet_container, new ClientesFragment());
+                    ft.commit();
+
+                }
+                if (menuItem.getItemId() == R.id.navigation_item_ventas){
+                    //Intent intent = new Intent(MainActivity.this, ClientesActivity.class);
+                    //startActivity(intent);
+
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.fragmet_container, new VentasFragment());
+                    ft.commit();
+
                 }
                 return true;
             }

@@ -7,4 +7,8 @@
     <string name="texto_positive">Aceptar</string>
     <string name="validacion_nombre">El nombre es obligatorio.</string>
     <string name="validacion_direccion">La dirección es obligatoria.</string>
+    <string name="activity_altacliente_text">Alta de cliente</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

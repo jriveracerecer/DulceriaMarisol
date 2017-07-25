@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.delao.dulceriamarisol.AltaClienteActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <TextView
+        android:id="@+id/nombreClienteTextView"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/textview_left_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre" />
+
+    <EditText
+        android:id="@+id/nombreEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_medium"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/direccionClienteTextView"
+        android:layout_marginLeft="@dimen/textview_left_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dirección" />
+
+    <EditText
+        android:id="@+id/direccionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_medium"/>
+
+    <TextView
+        android:id="@+id/telefonoClienteTextView"
+        android:layout_marginLeft="@dimen/textview_left_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Teléfono" />
+
+    <EditText
+        android:id="@+id/telefonoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size_medium"
+        android:maxLines="1" />
+
+</LinearLayout>

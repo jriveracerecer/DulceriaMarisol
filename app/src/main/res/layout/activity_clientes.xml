@@ -29,48 +29,6 @@
             android:layout_height="match_parent"
             android:scrollbars="vertical" />
 
-        <!--<TextView-->
-        <!--android:id="@+id/textView"-->
-        <!--android:layout_marginTop="10dp"-->
-        <!--android:layout_marginLeft="@dimen/textview_left_margin"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Nombre" />-->
-
-        <!--<EditText-->
-        <!--android:id="@+id/nombreEditText"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="@dimen/font_size_medium"-->
-        <!--android:maxLines="1" />-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/textView3"-->
-        <!--android:layout_marginLeft="@dimen/textview_left_margin"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Dirección" />-->
-
-        <!--<EditText-->
-        <!--android:id="@+id/direccionEditText"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="@dimen/font_size_medium"/>-->
-
-        <!--<TextView-->
-        <!--android:id="@+id/textView4"-->
-        <!--android:layout_marginLeft="@dimen/textview_left_margin"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Teléfono" />-->
-
-        <!--<EditText-->
-        <!--android:id="@+id/telefonoEditText"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textSize="@dimen/font_size_medium"-->
-        <!--android:maxLines="1" />-->
-
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
@@ -84,4 +42,3 @@
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
-

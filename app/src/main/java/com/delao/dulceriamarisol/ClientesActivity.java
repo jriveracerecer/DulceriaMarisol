@@ -1,28 +1,22 @@
 package com.delao.dulceriamarisol;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.EditText;
+import android.view.View;
 import com.delao.dulceriamarisol.adapters.ClientesAdapter;
 import com.delao.dulceriamarisol.adapters.DividerItemDecoration;
 import com.delao.dulceriamarisol.data.DatabaseHandler;
-import com.delao.dulceriamarisol.fragments.MensajesDialogFragment;
 import com.delao.dulceriamarisol.models.Cliente;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class ClientesActivity extends AppCompatActivity {
-
-    private EditText nombre;
-    private EditText direccion;
-    private EditText telefono;
 
     private List<Cliente> clienteList = new ArrayList<>();
     private RecyclerView recyclerView;
@@ -47,9 +41,14 @@ public class ClientesActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
-//        nombre = (EditText) findViewById(R.id.nombreEditText);
-//        direccion = (EditText) findViewById(R.id.direccionEditText);
-//        telefono = (EditText) findViewById(R.id.telefonoEditText);
+        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent(ClientesActivity.this, AltaClienteActivity.class);
+                startActivity(intent);
+                //Toast.makeText(ClientesActivity.this, "Fab click", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         iniciaAdapter();
     }
@@ -60,48 +59,5 @@ public class ClientesActivity extends AppCompatActivity {
         clienteList.addAll(db.getAllClientes());
 
         adapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-
-        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()){
-            case R.id.menu_item_guardar:
-                guardaCliente();
-                return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void guardaCliente(){
-
-        MensajesDialogFragment dialog = new MensajesDialogFragment();
-
-        if (nombre.getText().toString() == null || nombre.getText().toString().trim().isEmpty()){
-            dialog.setMensaje(getString(R.string.validacion_nombre));
-            dialog.show(getSupportFragmentManager(), "nombre");
-            return;
-        }
-
-        if (direccion.getText().toString() == null || direccion.getText().toString().trim().isEmpty()){
-            dialog.setMensaje(getString(R.string.validacion_direccion));
-            dialog.show(getSupportFragmentManager(), "direccion");
-            return;
-        }
-
-        DatabaseHandler db = new DatabaseHandler(ClientesActivity.this, this);
-        Cliente c = new Cliente();
-        c.setNombre(nombre.getText().toString());
-        c.setDireccion(direccion.getText().toString());
-        c.setTelefono("7225489765");
-        db.addCliente(c);
     }
 }
